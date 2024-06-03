@@ -2,52 +2,16 @@ import React,{useState} from "react";
 import Navbar from "./components/Navbar";
 import News from "./components/News";
 import LoadingBar from "react-top-loading-bar";
-
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
 const App =()=> {
  const pageSize = 10;
- const apiKey='cca3f68b073e4aa9a6a0e55ecb4ef453'
-
-  const [progress, setProgress] = useState(0)
+ const apiKey=process.env.REACT_APP_NEWS_API_KEY;
 
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     mode: "light",
-  //     alert: null,
-  //   };
-  // }
+  const [progress, setProgress] = useState(0);
 
-  // showAlert = (message, type) => {
-  //   this.setState({
-  //     alert: {
-  //       msg: message,
-  //       type: type,
-  //     }
-  //   });
-
-  //   setTimeout(() => {
-  //     this.setState({
-  //       alert: null
-  //     });
-  //   }, 1500);
-  // };
-
-  // toggleMode = () => {
-  //   if (this.state.mode === "light") {
-  //     this.setState({ mode: "dark" });
-  //     document.body.style.backgroundColor = "#042743";
-  //     this.showAlert("Dark mode has been enabled", "success");
-  //   } else {
-  //     this.setState({ mode: "light" });
-  //     document.body.style.backgroundColor = "white";
-  //     this.showAlert("Light mode has been enabled", "success");
-  //   }
-  // };
 
     return (
       <div>
@@ -93,21 +57,6 @@ const App =()=> {
                 />
               }
             ></Route>
-
-            {/*
-            <Route
-              exact
-              path="/general"
-              element={
-                <News setProgress={setProgress} 
-                  key="general"
-                  pageSize={pageSize}
-                  country="in"
-                  category="general"
-                />
-              }
-            ></Route>
-            */}
 
             <Route
               exact
